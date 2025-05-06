@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <div class="index-container">
+    <h2>Welcome to Anime List App</h2>
+    <a href="{{ url_for('create_account') }}">Create Account</a><br>
+    <a href="{{ url_for('login') }}">Login</a>
+    </div>
+{% endblock %}

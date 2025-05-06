@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}Your Anime List{% endblock %}
+{% block body_class %}anime-page{% endblock %}
+
+{% block content %}
+<div class="wide-container">
+    <h2>Hello {{ user }}! Here's your anime list:</h2>
+
+    <div class="anime-container">
+        <!-- Anime Add Form -->
+        <div class="anime-form">
+            <form method="post">
+                <input type="text" name="name" placeholder="Anime Name" required><br>
+                <input type="number" name="season" placeholder="Season" required><br>
+                <input type="number" name="episode" placeholder="Episode" required><br>
+                <input type="submit" value="Add Anime">
+            </form>
+        </div>
+
+        <!-- Anime List Display -->
+        <div class="anime-list">
+            <ul>
+                {% for name, season, episode in anime_entries %}
+                    <li>{{ name }} - Season {{ season }}, Episode {{ episode }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}
